@@ -15,7 +15,7 @@ class DataQualityOperator(BaseOperator):
         expected_result: Any,
         redshift_conn_id="redshift",
         *args,
-        **kwargs
+        **kwargs,
     ):
         super(DataQualityOperator, self).__init__(*args, **kwargs)
         self.redshift_conn_id = redshift_conn_id
@@ -28,6 +28,8 @@ class DataQualityOperator(BaseOperator):
         response = redshift.run(self.sql_query)
 
         if response != self.expected_result:
-            raise ValueError(f"Data quality check failed. {self.table} contained 0 rows")
+            raise ValueError(
+                f"Data quality check failed. {self.table} contained 0 rows"
+            )
 
         self.log.info("Data quality check succeed")
