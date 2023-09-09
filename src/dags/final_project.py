@@ -56,25 +56,29 @@ def final_project():
     load_user_dimension_table = LoadDimensionalOperator(
         task_id="Load_user_dim_table",
         sql_query=InsertQueries.user_table_insert,
-        truncate_table="users",
+        table_name="users",
+        truncate=True
     )
 
     load_song_dimension_table = LoadDimensionalOperator(
         task_id="Load_song_dim_table",
         sql_query=InsertQueries.song_table_insert,
-        truncate_table="songs",
+        table_name="songs",
+        truncate=True
     )
 
     load_artist_dimension_table = LoadDimensionalOperator(
         task_id="Load_artist_dim_table",
         sql_query=InsertQueries.artist_table_insert,
-        truncate_table="artists",
+        table_name="artists",
+        truncate=True
     )
 
     load_time_dimension_table = LoadDimensionalOperator(
         task_id="Load_time_dim_table",
         sql_query=InsertQueries.time_table_insert,
-        truncate_table="times",
+        table_name="times",
+        truncate=True
     )
 
     run_quality_checks = DataQualityOperator(
