@@ -21,7 +21,7 @@ Connect with me at [LinkedIn](https://linkedin.com/in/harrison-henri-dos-santos-
 
 <div>
 <img align="left" alt="Redshift" width="60px" style="margin-left:2em; margin-top:10px" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Amazon-Redshift-Logo.svg" />
-<img align="left" alt="S3" width="90px" style="margin-left:2em; margin-top:-4px" src="https://cdn.iconscout.com/icon/free/png-512/free-amazon-s3-2968702-2464706.png?f=avif&w=512" />
+<img align="left" alt="S3" width="90px" style="margin-left:2em; margin-top:-8px" src="https://cdn.iconscout.com/icon/free/png-512/free-amazon-s3-2968702-2464706.png?f=avif&w=512" />
 <img align="left" alt="Athena" width="70px" style="margin-left:2em; margin-top:6px" src="https://www.svgrepo.com/show/353380/airflow.svg" />
 
 <br /><br /><br /><br />
