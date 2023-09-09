@@ -5,6 +5,7 @@ from airflow.decorators import dag
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.postgres_operator import PostgresOperator
 
+from src.operators.data_quality import DataQualityOperator
 from src.operators.load_dimension import LoadDimensionalOperator
 from src.operators.load_fact import LoadFactOperator
 from src.operators.stage_redshift import StageToRedshiftOperator
@@ -53,19 +54,27 @@ def final_project():
     )
 
     load_user_dimension_table = LoadDimensionalOperator(
-        task_id="Load_user_dim_table", sql_query=InsertQueries.user_table_insert
+        task_id="Load_user_dim_table",
+        sql_query=InsertQueries.user_table_insert,
+        truncate_table="users",
     )
 
     load_song_dimension_table = LoadDimensionalOperator(
-        task_id="Load_song_dim_table", sql_query=InsertQueries.song_table_insert
+        task_id="Load_song_dim_table",
+        sql_query=InsertQueries.song_table_insert,
+        truncate_table="songs",
     )
 
     load_artist_dimension_table = LoadDimensionalOperator(
-        task_id="Load_artist_dim_table", sql_query=InsertQueries.artist_table_insert
+        task_id="Load_artist_dim_table",
+        sql_query=InsertQueries.artist_table_insert,
+        truncate_table="artists",
     )
 
     load_time_dimension_table = LoadDimensionalOperator(
-        task_id="Load_time_dim_table", sql_query=InsertQueries.time_table_insert
+        task_id="Load_time_dim_table",
+        sql_query=InsertQueries.time_table_insert,
+        truncate_table="times",
     )
 
     run_quality_checks = DataQualityOperator(
